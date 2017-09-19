@@ -9,7 +9,7 @@
 [0-9]+    {yylval.num = atoi(yytext); return number;}
 [ \t\n]   ;
 [-+=;]    {return yytext[0];}
-.         {ECHO; yyeror("Oh I cann\'t read this.");}
+.         {ECHO; yyerror("Oh I cann\'t read this.");}
 
 %%
 int yywrap(void)    {return 1;}

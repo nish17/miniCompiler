@@ -7,7 +7,7 @@
   void updateSymVal(char symbol, int val);  
 %}
 
-%union {int num; char;}
+%union {int num; char id;}
 %start line
 %token print
 %token exit_
