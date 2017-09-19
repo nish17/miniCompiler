@@ -8,13 +8,14 @@
  Only addition and subtraction operators are working
 
 # Sample code 
- $`yacc -d calc.y` // here -d flag will generate y.tab.h & y.tab.c files which will be required for compiling the final program 
+
+$`yacc -d calc.y` // here -d flag will generate y.tab.h & y.tab.c files which will be required for compiling the final program 
  
- $`lex calc.l` // this command will generate lex.yy.c 
+$`lex calc.l` // this command will generate lex.yy.c 
  
- $`gcc lex.yy.c y.tab.c -o calc` //compiling both the output files received from the above and putting the output in calc
+$`gcc lex.yy.c y.tab.c -o calc` //compiling both the output files received from the above and putting the output in calc
  
- $`./calc` // run executable
+$`./calc` // run executable
 
 `a = 10 + 2;`
 
@@ -22,6 +23,6 @@
 
 `Value is 12`
 
-# ^C
+^C
 
-# $
+$
