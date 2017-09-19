@@ -3,7 +3,7 @@
 # Things currently working
  Only single letter variable name is allowed (it can either be in UPPERCASE or lowercase)
  
- No need to specify the data type, directly inpu the variable name
+ No need to specify the data type, directly input the variable name
  
  Only addition and subtraction operators are working
 
