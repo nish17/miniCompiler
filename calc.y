@@ -1,5 +1,6 @@
 %{
-  void yyerror(char *s);
+  int yylex();
+  void yyerror(const char *s);
   #include <stdio.h>
   #include <stdlib.h>
   #include <ctype.h>
@@ -30,6 +31,8 @@ assignment  : identifier '=' exp {updateSymVal($1,$3);}
 exp         : term {$$ = $1;}
             | exp '+' term {$$ = $1 + $3;}
             | exp '-' term {$$ = $1 - $3;}
+            | exp '*' term {$$ = $1 * $3;}
+            | exp '/' term {$$ = $1 / $3;}            
             ;
 term        : number {$$ = $1;}
             | identifier {$$ = symVal($1);}
@@ -58,12 +61,12 @@ void updateSymVal(char symbol, int val){
 
 int main(){
   int i;
-  for(i = 0, i<52; i++){ 
+  for(i = 0; i<52; i++){ 
     sym[i] = 0;
   }
   return yyparse();
 }
 
-void yyerror(char *s){ 
+void yyerror(const char *s){ 
   fprintf(stderr,"%s\n",s);
 }
