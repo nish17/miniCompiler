@@ -19,7 +19,7 @@ $`./calc` // run executable
 
 `a = 10 + 2;`
 
-`print a`
+`print a;`
 
 `Value is 12`
 
