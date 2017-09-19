@@ -8,7 +8,7 @@
 %}
 
 %union {int num; char;}
-$start line
+%start line
 %token print
 %token exit_
 %token <num> number
