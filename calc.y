@@ -2,6 +2,7 @@
   void yyerror(char *s);
   #include <stdio.h>
   #include <stdlib.h>
+  #include <ctype.h>
   int sym[52];
   int symVal(char symbol);
   void updateSymVal(char symbol, int val);  
@@ -56,8 +57,13 @@ void updateSymVal(char symbol, int val){
 }
 
 int main(){
-  for(int i = 0, i<52; i++) sym[i] = 0;
+  int i;
+  for(i = 0, i<52; i++){ 
+    sym[i] = 0;
+  }
   return yyparse();
 }
 
-void yyerror(chat *s) fprintf(stderr,"%s\n",s);
+void yyerror(char *s){ 
+  fprintf(stderr,"%s\n",s);
+}
