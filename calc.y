@@ -4,6 +4,7 @@
   #include <stdio.h>
   #include <stdlib.h>
   #include <ctype.h>
+  #include<math.h>
   int sym[52];
   int symVal(char symbol);
   void updateSymVal(char symbol, int val);  
@@ -17,8 +18,15 @@
 %token <id> identifier
 %type <num> line exp term
 %type <id> assignment
+%token SIN COS TAN SQRT EXP
+%left GE LE EQ NE '>' '<'
+%left '+' '-'
+%left '*' '/'
+%nonassoc UMINUS
 
 %%
+
+ 
 line  : assignment ';' {;}
       | exit_ ';' {exit(EXIT_SUCCESS);}
       | print exp ';' {printf("Value is %d\n", $2);}
@@ -33,6 +41,7 @@ exp         : term {$$ = $1;}
             | exp '-' term {$$ = $1 - $3;}
             | exp '*' term {$$ = $1 * $3;}
             | exp '/' term {$$ = $1 / $3;}            
+			| exp '^' term  {$$=pow($1,$3);}
             ;
 term        : number {$$ = $1;}
             | identifier {$$ = symVal($1);}
