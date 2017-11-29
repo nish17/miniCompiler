@@ -5,7 +5,7 @@
  
  No need to specify the data type, directly input the variable name
  
- Only addition and subtraction operators are working
+Addition, subtraction, multiplication, Division`(only Integers no floats or double)`, Power Functions are working
 
 # Sample code 
 
